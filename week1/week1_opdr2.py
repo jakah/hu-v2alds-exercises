@@ -2,10 +2,10 @@ def getnumbers(s):
     """Get all the numbers from a string
 
     Args:
-        s string: The string were the numbers are in
+        s string: The string the numbers are in.
 
     Returns:
-        dictionary: All numbers found in the string
+        dictionary: All numbers found in the string.
     """
     numbers = []
     lastchar = 'a'
@@ -29,3 +29,6 @@ def getnumbers(s):
         currentnumber = 0
 
     return numbers
+
+string = "een123zin45 6met-632meerdere+7777getallen"
+print("Numbers in string:" + str(getnumbers(string)))

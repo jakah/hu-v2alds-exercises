@@ -1,13 +1,13 @@
 import random
 
 def samenumberinlist(list):
-    """Check if a number occurs twice or more in a list
+    """Check if a number occurs twice or more in a list.
     
     Args:
-        list list: The list of numbers
+        list list: The list of numbers.
     
     Returns:
-        boolean: True if list contains a duplicate number, else False
+        boolean: True if list contains a duplicate number, else False.
     """
     duplicates = []
     itemsinlist = []
@@ -35,3 +35,22 @@ def generaterandomlist(rangestart,rangeend,lenght):
         randomlist.append(random.randint(rangestart,rangeend))
         items+=1
     return randomlist
+
+print("Same birthday simulation")
+results = []
+numberoflists = 0
+numberoftrues = 0
+numberoffalses = 0
+while (numberoflists < 100):
+    result = (samenumberinlist(
+        generaterandomlist(1, 365, 23)))
+    results.append(result)
+    if (result == False):
+        numberoftrues += 1
+    else:
+        numberoffalses += 1
+    numberoflists += 1
+
+
+print("True: " + str(numberoftrues))
+print("False: " + str(numberoffalses))

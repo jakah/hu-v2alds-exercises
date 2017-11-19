@@ -9,7 +9,10 @@ def checkdividableandnotself(list, checknumber):
         list: Description
     """
     for number in list:
-        if (number % checknumber == 0 and number != checknumber):
+        tempnumber = number
+        while ((tempnumber - checknumber) >= checknumber):
+            tempnumber = tempnumber- checknumber
+        if (number != checknumber and (tempnumber == 0 or tempnumber == checknumber)):
             list.remove(number)
     return list
 
@@ -26,3 +29,12 @@ def primecheck(numbers):
     for number in numbers:
         checkdividableandnotself(numbers, number)
     return numbers
+
+# Create a list with numbers from 2-1000
+list = []
+while (len(list) < 1000):
+    list.append(len(list) + 1)
+list.remove(1)
+
+print("List of primes under 1000")
+print(primecheck(list))
