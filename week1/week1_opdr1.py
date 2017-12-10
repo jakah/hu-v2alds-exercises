@@ -1,3 +1,12 @@
+'''
+    File name: week1_opdr1.py
+    Author: Jari van Dam
+    Studentnumber: 1677046
+    Group: V2C/retake
+    Teacher: Frits Dannenberg
+'''
+
+
 def mymax(a):
     """Find the largest number in a list of integers or floats.
     

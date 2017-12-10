@@ -1,3 +1,11 @@
+'''
+    File name: week1_opdr3.py
+    Author: Jari van Dam
+    Studentnumber: 1677046
+    Group: V2C/retake
+    Teacher: Frits Dannenberg
+'''
+
 def checkdividableandnotself(list, checknumber):
     """Remove number from list if dividable by checknumber but not if number is checknumber
 

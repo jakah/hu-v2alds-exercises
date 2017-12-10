@@ -1,3 +1,10 @@
+'''
+    File name: week2_opdr4.py
+    Author: Jari van Dam
+    Studentnumber: 1677046
+    Group: V2C/retake
+    Teacher: Frits Dannenberg
+'''
 def mybin(n):
     """convert a base 10 number to a binary string. 
 

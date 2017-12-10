@@ -1,3 +1,10 @@
+'''
+    File name: week1_opdr2.py
+    Author: Jari van Dam
+    Studentnumber: 1677046
+    Group: V2C/retake
+    Teacher: Frits Dannenberg
+'''
 def getnumbers(s):
     """Get all the numbers from a string
 

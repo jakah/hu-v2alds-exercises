@@ -1,3 +1,10 @@
+'''
+    File name: week1_opdr4.py
+    Author: Jari van Dam
+    Studentnumber: 1677046
+    Group: V2C/retake
+    Teacher: Frits Dannenberg
+'''
 import random
 
 def samenumberinlist(list):
