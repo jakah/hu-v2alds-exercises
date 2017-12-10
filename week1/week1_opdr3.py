@@ -8,6 +8,18 @@ def checkdividableandnotself(list, checknumber):
     Returns:
         list: Description
     """
+
+    # for number in list:
+    #         for nonprime in nonprimelist:
+    #             print("Nonprime:" +str(nonprime))
+    #             if ((number/nonprime) == 1):
+    #                 print("Valid if" + str(nonprime))
+    #                 list.remove(number)
+    #                 if number not in nonprimelist:
+    #                     nonprimelist.add(number)
+
+    # return list
+
     for number in list:
         tempnumber = number
         while ((tempnumber - checknumber) >= checknumber):
@@ -15,7 +27,6 @@ def checkdividableandnotself(list, checknumber):
         if (number != checknumber and (tempnumber == 0 or tempnumber == checknumber)):
             list.remove(number)
     return list
-
 
 def primecheck(numbers):
     """Give all primes in a list
@@ -26,15 +37,13 @@ def primecheck(numbers):
     Returns:
         list: List of prime numbers
     """
+    nonprimelist = [2,4]
     for number in numbers:
         checkdividableandnotself(numbers, number)
     return numbers
 
 # Create a list with numbers from 2-1000
-list = []
-while (len(list) < 1000):
-    list.append(len(list) + 1)
-list.remove(1)
+list = [i for i in range(2,1001)]
 
 print("List of primes under 1000")
 print(primecheck(list))

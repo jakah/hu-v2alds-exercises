@@ -8,20 +8,20 @@ def getnumbers(s):
         dictionary: All numbers found in the string.
     """
     numbers = []
-    lastchar = 'a'
+    lastchar_number = False
     currentnumber = 0
     for item in s:
         try:
             number = int(item)
-            if (lastchar != 'a'):
+            if (lastchar_number == True):
                 currentnumber *= 10
                 currentnumber += number
-                lastchar = number
+                lastchar_number = True
             else:
                 currentnumber = number
-                lastchar = number
+                lastchar_number = True
         except ValueError:
-            if(lastchar != 'a' and currentnumber != 0):
+            if(lastchar_number == True and currentnumber != 0):
                 numbers.append(currentnumber)
                 currentnumber = 0
     if (currentnumber != 0):
