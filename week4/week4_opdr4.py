@@ -20,4 +20,5 @@ def F(n):
 
     return a[len(m) - 1][n]
 
-print(F(5))
+
+print(F(7))

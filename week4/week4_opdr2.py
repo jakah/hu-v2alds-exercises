@@ -29,6 +29,8 @@ def hashcollision(lookuptable, start, end, step):
             lookuptable[storehash] = number
         number += step
     return False
+
+
 lookuptable = {}
 
-hashcollision(lookuptable, 0.0, 1.0, 0.0000000000000001)
+hashcollision(lookuptable, 0.0, 1.0, 0.00000000000000001)
