@@ -6,37 +6,8 @@
     Teacher: Frits Dannenberg
 '''
 
-def checkdividableandnotself(list, checknumber):
-    """Remove number from list if dividable by checknumber but not if number is checknumber
 
-    Args:
-        list list: All numbers that need to  be checked
-        checknumber int: The number all values will be check against
-
-    Returns:
-        list: Description
-    """
-
-    # for number in list:
-    #         for nonprime in nonprimelist:
-    #             print("Nonprime:" +str(nonprime))
-    #             if ((number/nonprime) == 1):
-    #                 print("Valid if" + str(nonprime))
-    #                 list.remove(number)
-    #                 if number not in nonprimelist:
-    #                     nonprimelist.add(number)
-
-    # return list
-
-    for number in list:
-        tempnumber = number
-        while ((tempnumber - checknumber) >= checknumber):
-            tempnumber = tempnumber- checknumber
-        if (number != checknumber and (tempnumber == 0 or tempnumber == checknumber)):
-            list.remove(number)
-    return list
-
-def primecheck(numbers):
+def primecheck(maxnumber):
     """Give all primes in a list
 
     Args:
@@ -45,13 +16,25 @@ def primecheck(numbers):
     Returns:
         list: List of prime numbers
     """
-    nonprimelist = [2,4]
-    for number in numbers:
-        checkdividableandnotself(numbers, number)
-    return numbers
+    numbers = [i for i in range(maxnumber)]
+    primelist = [True] * maxnumber
+    for i in range(2, maxnumber):
+        if primelist[i]:
+            j = 2
+            multiple = i * 2
+            while multiple <= len(primelist)-1:
+                primelist[multiple] = False
+                multiple = (j * i)
+                j += 1
 
-# Create a list with numbers from 2-1000
-list = [i for i in range(2,1001)]
+    result = []
+    for i in range(len(numbers)):
+        if primelist[i]:
+            result.append(numbers[i])
+    # Skip 0 and 1 because they are not real primes
+    return result[2:]
+
 
 print("List of primes under 1000")
-print(primecheck(list))
+
+print(primecheck(1000))
