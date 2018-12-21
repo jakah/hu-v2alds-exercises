@@ -29,6 +29,8 @@ def bracketcheck(string):
     True
     >>> bracketcheck('((<>)())')
     True
+    >>> bracketcheck('{{}')
+    False
     """
     openbrackets = ['<', '[', '(']
     closingbrackets = ['>', ']', ')']
@@ -43,13 +45,18 @@ def bracketcheck(string):
                 return False
             except IndexError:
                 return False
+            except Exception as e:
+                print(e)
             if openbrackets.index(stackitem) != closingbrackets.index(char):
                 return False
         else:
             # Unkown charcter
             return False
-    return True
+    if stack.isEmpty():
+        return True
+    else:
+        return False
 
 
-string = "a"
+string = "(())"
 print(bracketcheck(string))
